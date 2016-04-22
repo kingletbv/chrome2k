@@ -1,0 +1,50 @@
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(lib)
+
+dnl RELEASE.so.CURRENT-AGE.AGE.REVISION
+CHROME_RELEASE=1
+CHROME_CURRENT=1
+CHROME_REVISION=0
+CHROME_AGE=0
+AC_SUBST(CHROME_RELEASE)
+AC_SUBST(CHROME_CURRENT)
+AC_SUBST(CHROME_REVISION)
+AC_SUBST(CHROME_AGE)
+
+AM_INIT_AUTOMAKE(Chrome, $CHROME_RELEASE.$CHROME_CURRENT.$CHROME_REVISION)
+AM_CONFIG_HEADER(config.h)
+
+AC_PATH_PROG(CORBA_IDL, orbit-idl, no)
+AC_PATH_PROG(GLIB_CONFIG, glib-config, no)
+AC_PATH_PROG(ORBIT_CONFIG, orbit-config, no)
+AC_PATH_PROG(GTK_CONFIG, gtk-config, no)
+AC_PATH_PROG(PTC_CONFIG, ptc-config, no)
+
+AC_PROG_CC
+AC_PROG_CXX
+AM_PROG_LIBTOOL
+AC_PROG_INSTALL
+
+
+AC_ARG_ENABLE( werror,
+[ --enable-werror Treat all warnings as errors [default=disable]],
+	CXXFLAGS="$CXXFLAGS -Wall -Werr"
+	CFLAGS="$CFLAGS -Wall -Werr"
+	echo Treating all warnings as errors
+,)
+
+AC_ARG_ENABLE( MSVisual,
+[ --enable-MSVisual Use inlined MS-Visual C Intel ASM [default=disable]],
+	CFLAGS="$CFLAGS -DVCINTEL_ASM"
+	echo Using inlined MS_Visual C Intel assembler optimizations
+,)
+
+dnl Make sure headerfiles are allways prefixed with "Chrome"
+includedir="$includedir/Chrome"
+
+
+AC_OUTPUT([Makefile \
+lib/Makefile
+example/Makefile
+stamp.h])

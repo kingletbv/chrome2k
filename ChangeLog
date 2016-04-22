@@ -1,0 +1,14 @@
+edited = 2
+
+	Applied LGPL licence to all headers.
+	Made a macro version of Transformation_Transform.
+
+[Rebecka] 2000-09-06
+	Added autoconf to Chrome.
+	Added EdgeTable_SolidFill32 to interface with OpenPTC surfaces.
+	Replaced polygon drawing code with static Viewpoint_DrawPolygon.
+	Added Viewpont_SetRendermode to dynamically select 256 color / truecolor.
+	Chrome is now a library
+
+Martijn Boekhorst ??-??-??
+	Created Chrome
