@@ -1,0 +1,31 @@
+nff
+version 2.0
+
+bumpercar
+14
+0.5	0		-0.5		// 0
+0.5	0		1			// 1
+0.6	-0.1	1.1		// 2
+0.3	-0.2	0.2		// 3
+0.3	-0.2	-0.2		// 4
+0.6	-0.1	-0.7		// 5
+0.3	-0.4	0.1		// 6
+// Copy Mirror in X direction
+-0.5	0		-0.5		// 7
+-0.5	0		1			// 8
+-0.6	-0.1	1.1		// 9
+-0.3	-0.2	0.2		// 10
+-0.3	-0.2	-0.2		// 11
+-0.6	-0.1	-0.7		// 12
+-0.3	-0.4	0.1		// 13
+
+9
+5 4 3 2		0xff4444			// Right Side panel
+10 9 2 3		0xff5555			// Front panel
+10 9 12 11	0xff4444			// Left side panel
+12 5 4 11	0xaa0000			// Back panel
+0 1 2 5		0x443333			// Bottom right side panel
+1 8 9 2		0x554444			// Bottom front panel
+12 9 8 7		0x443333			// Bottom left side panel
+12 7 0 5		0x554444			// Bottom back panel
+6 3 10 13	0xAAAAAA	both	// Wind shield (both sides)
